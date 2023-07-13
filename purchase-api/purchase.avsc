@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "name": "Purchase",
+  "fields": [
+    { "name":  "purchaseID", "type": "int"},
+    { "name": "creditCard", "type": "string" },
+    { "name": "namePrinted", "type": "string" },
+    { "name": "validityCard", "type": "string" },
+    { "name": "codSec", "type": "int" },
+    { "name": "valueOfPayment", "type": "float" },
+    { "name": "installments", "type": "int" }
+  ]
+}
