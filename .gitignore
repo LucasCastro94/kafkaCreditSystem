@@ -1,0 +1,23 @@
+# Ignorar arquivos gerados pelo Maven/Gradle
+payment-confirm-api/target/
+payment-confirm-api/build/
+payment-confirm-api/.gradle/
+payment-confirm-api/.gradle-cache/
+purchase-api/target/
+purchase-api/build/
+purchase-api/.gradle/
+purchase-api/.gradle-cache/
+
+# Ignorar arquivos de log
+payment-confirm-api/logs/
+payment-confirm-api/*.log
+purchase-api/logs/
+purchase-api/*.log
+
+# Ignorar arquivos gerados pelo Lombok
+payment-confirm-api/*.class
+payment-confirm-api/*.classH
+payment-confirm-api/*.classL
+purchase-api/*.class
+purchase-api/*.classH
+purchase-api/*.classL
