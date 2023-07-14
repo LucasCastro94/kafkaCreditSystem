@@ -1,13 +1,14 @@
 {
   "type": "record",
   "name": "Purchase",
+  "namespace": "git.com.lucascastro94",
   "fields": [
-    { "name":  "purchaseID", "type": "int"},
+    { "name": "purchaseID", "type": "int" },
     { "name": "creditCard", "type": "string" },
     { "name": "namePrinted", "type": "string" },
     { "name": "validityCard", "type": "string" },
     { "name": "codSec", "type": "int" },
-    { "name": "valueOfPayment", "type": "float" },
+    { "name": "valueOfPayment", "type": "double" },
     { "name": "installments", "type": "int" }
   ]
 }

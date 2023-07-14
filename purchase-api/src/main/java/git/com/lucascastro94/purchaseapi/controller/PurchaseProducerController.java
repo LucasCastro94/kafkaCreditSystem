@@ -1,6 +1,6 @@
 package git.com.lucascastro94.purchaseapi.controller;
 
-import git.com.lucascastro94.purchaseapi.model.Purchase;
+import git.com.lucascastro94.Purchase;
 import git.com.lucascastro94.purchaseapi.service.PurchaseProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +18,6 @@ public class PurchaseProducerController {
     @PostMapping
     void producerPurchase(@RequestBody Purchase purchase)
     {
-        service.produce(purchase);
+         service.produce(purchase);
     }
 }
