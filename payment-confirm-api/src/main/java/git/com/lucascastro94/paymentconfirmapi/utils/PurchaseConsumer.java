@@ -18,13 +18,9 @@ public class PurchaseConsumer {
 
     @KafkaListener(topics = "${topic.name.consumer}",groupId = "group-1")
     public void consumeCustomer(ConsumerRecord<String, Purchase> purchase){
-        System.out.println(purchase.value().getNamePrinted());
         PaymentDTO paymentDTO = new PaymentDTO();
         paymentDTO.setPaymentDTO(purchase.value());
-        ObjectMapper objectMapper = new ObjectMapper();
-        Payment payment = objectMapper.convertValue(paymentDTO,Payment.class);
-        int b = 2;
-        paymentService.savePayment(payment);
+        paymentService.savePayment(paymentDTO);
     }
 
 }

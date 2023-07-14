@@ -1,5 +1,7 @@
 package git.com.lucascastro94.paymentconfirmapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import git.com.lucascastro94.Purchase;
 
 
@@ -8,14 +10,16 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PaymentDTO {
-    private long id_compra;
+
+    private long purchaseId;
     private String creditCardNumber;
 
 
     public void setPaymentDTO(Purchase purchase)
     {
-       this.id_compra = purchase.getPurchaseID();
+       this.purchaseId = purchase.getPurchaseID();
        this.creditCardNumber = mask(purchase.getCreditCard().toString());
     }
 

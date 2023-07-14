@@ -15,8 +15,8 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
-    @Column
-    private long id_compra;
+    @Column(unique = true)
+    private long purchaseId;
 
     @Column
     private String creditCardNumber;
