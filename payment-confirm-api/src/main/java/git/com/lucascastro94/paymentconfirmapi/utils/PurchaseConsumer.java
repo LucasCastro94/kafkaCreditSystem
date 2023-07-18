@@ -1,8 +1,6 @@
 package git.com.lucascastro94.paymentconfirmapi.utils;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import git.com.lucascastro94.Purchase;
-import git.com.lucascastro94.paymentconfirmapi.model.Payment;
 import git.com.lucascastro94.paymentconfirmapi.model.PaymentDTO;
 import git.com.lucascastro94.paymentconfirmapi.service.PaymentService;
 import org.apache.kafka.clients.consumer.ConsumerRecord;

@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PaymentService {
@@ -20,7 +19,6 @@ public class PaymentService {
 
     public void savePayment(PaymentDTO paymentDTO)
     {
-
         Payment payment = objectMapper.convertValue(paymentDTO,Payment.class);
         paymentRepository.save(payment);
     }
@@ -32,9 +30,9 @@ public class PaymentService {
                .toList();
     }
 
-    public PaymentDTO findByPurchaseId(long purchaseId) {
-
-            return objectMapper.convertValue(paymentRepository.findByPurchaseId(purchaseId), PaymentDTO.class);
+    public PaymentDTO findByPurchaseId(long purchaseId) throws Exception {
+         Payment payment = paymentRepository.findByPurchaseId(purchaseId).orElseThrow(() -> new Exception());
+            return objectMapper.convertValue(payment, PaymentDTO.class);
         }
 
     }

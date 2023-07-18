@@ -22,7 +22,7 @@ public class PaymentController {
     }
 
     @GetMapping("/{purchase_id}")
-    public PaymentDTO findByPurchaseId(@PathVariable long purchase_id)
+    public PaymentDTO findByPurchaseId(@PathVariable long purchase_id) throws Exception
     {
         return paymentService.findByPurchaseId(purchase_id);
     }
