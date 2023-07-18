@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import{ HttpClient } from '@angular/common/http'
 import { Purchase } from '../model/Purchase';
+import { Payment } from '../model/Payment';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,9 @@ export class PurchaseService {
 
   constructor(private http:HttpClient) { }
 
-  getPurchases() : Observable<Purchase[]>
+  getPurchases() : Observable<Payment[]>
   {
-    return this.http.get<Purchase[]>(this.getUrl+'/payments')
+    return this.http.get<Payment[]>(this.getUrl+'/payments')
   }
 
   postPurchase(purchase: Purchase) : Observable<Purchase>
@@ -24,9 +25,9 @@ export class PurchaseService {
     return this.http.post<Purchase>(this.postUrl+'/purchase',purchase)
   }
 
-  successfullpayment(paymentId : number) : Observable<Purchase>
+  successfullpayment(paymentId : number) : Observable<Payment>
   {
-    return this.http.get<Purchase>(`${this.getUrl}/payments/${paymentId}`)
+    return this.http.get<Payment>(`${this.getUrl}/payments/${paymentId}`)
   }
 
 }

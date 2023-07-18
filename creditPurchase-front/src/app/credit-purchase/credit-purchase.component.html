@@ -37,14 +37,6 @@
                 <input type="number" id="installments" name="installments" [(ngModel)]="purchase.installments" (ngModelChange)="checkFormValidity()">
             </div>
 
-            <div>
-                <input type="radio" id="trueOption" name="options" value="true" [(ngModel)]="selectedOption" (ngModelChange)="checkFormValidity()">
-                <label for="trueOption">Sucesso</label>
-
-                <input type="radio" id="falseOption" name="options" value="false" [(ngModel)]="selectedOption" (ngModelChange)="checkFormValidity()">
-                <label for="falseOption">Falha</label>
-            </div>
-
             <button type="button" (click)="save()" [disabled]="!isFormValid">Pagar</button>
 
         </form>
