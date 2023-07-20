@@ -24,7 +24,7 @@ export class CreditPurchaseComponent implements OnInit {
 
   }
 
-  async save() {
+   save() {
     this.isOpen = true
     this.progress = "Efetuando pagamento"
     this.purchase.purchaseID = this.id
